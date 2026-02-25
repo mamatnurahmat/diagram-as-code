@@ -1,0 +1,12 @@
+# Masuk ke direktori proyek
+cd diagram-as-code
+
+# Buat environment
+python3 -m venv venv
+
+# Aktifkan environment
+source venv/bin/activate  # Linux/macOS
+# venv\Scripts\activate    # Windows
+
+# Install dependencies
+pip install -r requirements.txt
