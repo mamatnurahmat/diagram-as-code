@@ -61,6 +61,9 @@ with Diagram("Topology", show=False, direction="LR"):
             with Cluster("App Group Redis"):
                 cache = Redis("Redis Cache")
 
+            with Cluster("App Group Temporal"):
+                temporal = Custom("Temporal", "./src/temporal.png")
+
             with Cluster("App Group RabbitMQ"):
                 queue = RabbitMQ("Event Queue")
 
@@ -140,6 +143,9 @@ with Diagram("Topology", show=False, direction="LR"):
         # MongoDB Access
         svc_manager >> mongodb
         svc_module >> mongodb
+
+        svc_manager >> temporal
+        svc_module >> temporal
 
         svc_manager >> loki
         svc_module >> loki
